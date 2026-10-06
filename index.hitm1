@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Love ❤️</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  background:#050505;
+  color:white;
+  font-family:Arial,sans-serif;
+  text-align:center;
+  overflow-x:hidden;
+}
+
+.start{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:radial-gradient(circle,#3b0010,#050505 65%);
+}
+
+h1{
+  font-size:42px;
+  color:#ff2b55;
+  margin-bottom:15px;
+}
+
+.subtitle{
+  color:#ddd;
+  font-size:18px;
+  margin-bottom:35px;
+}
+
+button{
+  background:#ff1744;
+  color:white;
+  border:0;
+  padding:15px 35px;
+  border-radius:30px;
+  font-size:18px;
+  cursor:pointer;
+  box-shadow:0 0 25px #ff1744;
+}
+
+#love{
+  display:none;
+  padding:40px 20px;
+  min-height:100vh;
+}
+
+.message{
+  max-width:600px;
+  margin:30px auto;
+  padding:25px;
+  background:rgba(255,255,255,.08);
+  border-radius:20px;
+  line-height:1.8;
+}
+
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+  margin-top:30px;
+}
+
+.gallery img{
+  width:280px;
+  max-width:90%;
+  border-radius:18px;
+  box-shadow:0 0 20px rgba(255,0,60,.35);
+}
+
+audio{
+  width:90%;
+  max-width:450px;
+  margin:25px auto;
+}
+
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:25px;
+  animation:float 5s linear infinite;
+  pointer-events:none;
+}
+
+@keyframes float{
+  0%{
+    transform:translateY(0);
+    opacity:1;
+  }
+  100%{
+    transform:translateY(-110vh);
+    opacity:0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="start" id="start">
+  <h1>For My Love ❤️</h1>
+  <p class="subtitle">A little surprise made with love</p>
+  <button onclick="openLove()">START ❤️</button>
+</div>
+
+<div id="love">
+
+  <h1>My Love ❤️</h1>
+
+  <div class="message">
+    <h2>For You 💌</h2>
+    <p>
+      You are someone very special to me.
+      Every moment with you is precious.
+      I made this little place just for you. ❤️
+    </p>
+  </div>
+
+  <h2>Our Memories 📸</h2>
+
+  <div class="gallery">
+    <img src="photo1.jpg" alt="Our photo">
+    <img src="photo2.jpg" alt="Our photo">
+  </div>
+
+  <h2 style="margin-top:40px;">Our Song 🎵</h2>
+
+  <audio controls>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="message">
+    <p>❤️ I Love You ❤️</p>
+  </div>
+
+</div>
+
+<script>
+
+function openLove(){
+
+  document.getElementById("start").style.display="none";
+  document.getElementById("love").style.display="block";
+
+  setInterval(function(){
+
+    const heart=document.createElement("div");
+
+    heart.className="heart";
+    heart.innerHTML="❤️";
+
+    heart.style.left=Math.random()*100+"%";
+    heart.style.animationDuration=(3+Math.random()*4)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function(){
+      heart.remove();
+    },7000);
+
+  },500);
+
+}
+
+</script>
+
+</body>
+</html>
